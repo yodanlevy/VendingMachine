@@ -11,7 +11,7 @@ namespace VendingMachine
             var input = Console.ReadLine();
             while (!string.IsNullOrWhiteSpace(input))
             {
-                if (Validator.isValid(input))
+                if (Validator.IsValid(input))
                 {
                     total += double.Parse(input);
                     input = Console.ReadLine();
