@@ -1,0 +1,7 @@
+﻿namespace VendingMachine
+{
+    class Drink
+    {
+
+    }
+}
