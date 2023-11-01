@@ -13,7 +13,7 @@ namespace VendingMachine
             Console.WriteLine("Please choose a drink:");
             foreach (var VARIABLE in _drinkList)
             {
-                Console.WriteLine(VARIABLE.SerialNumber + ". " + VARIABLE.DrinkName + " = " + VARIABLE.Price + "NIS" + "\n");
+                Console.WriteLine(VARIABLE.SerialNumber + ". " + VARIABLE.DrinkName + " = " + VARIABLE.Price + " NIS" + "\n");
             }
         }
     }
