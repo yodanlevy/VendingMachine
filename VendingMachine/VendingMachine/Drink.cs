@@ -1,6 +1,6 @@
 ﻿namespace VendingMachine
 {
-    class Drink
+    public class Drink
     {
         public string DrinkName;
         public string SerialNumber;
@@ -12,6 +12,7 @@
             this.SerialNumber = sreialNumber;
             this.Price = price;
         }
+
 
     }
 }

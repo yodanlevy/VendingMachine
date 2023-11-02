@@ -3,9 +3,9 @@ using System.Runtime.InteropServices;
 
 namespace VendingMachine
 {
-    class DataInitializer
+    public class DataInitializer
     {
-        public List<object> InitializeDrink()
+        public List<Drink> InitializeDrink()
         {
             Drink CocaCola= new Drink("Coca-Cola", "A1", 5);
             Drink CocaColaZero = new Drink("Coca-Cola Zero", "A2", 5);
@@ -15,7 +15,7 @@ namespace VendingMachine
             Drink GrapeJuice = new Drink("Grape Juice", "B2", 6);
             Drink Water = new Drink("Water", "B3", 4);
 
-            List<object> drinkMenu = new List<object>();
+            List<Drink> drinkMenu = new List<Drink>();
             drinkMenu.Add(CocaCola);
             drinkMenu.Add(CocaColaZero);
             drinkMenu.Add(Sprite);

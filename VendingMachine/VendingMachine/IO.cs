@@ -16,5 +16,19 @@ namespace VendingMachine
                 Console.WriteLine(VARIABLE.SerialNumber + ". " + VARIABLE.DrinkName + " = " + VARIABLE.Price + " NIS" + "\n");
             }
         }
+
+        public bool SerialNumberValidator(string serialNumber)
+        {
+            foreach (var VARIABLE in _drinkList)
+            {
+                if (VARIABLE.SerialNumber == serialNumber)
+                {
+                    return true;
+                }
+            }
+            
+            return false;
+        }
+        
     }
 }
