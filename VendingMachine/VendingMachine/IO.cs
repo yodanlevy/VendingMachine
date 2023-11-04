@@ -70,6 +70,20 @@ namespace VendingMachine
             Console.WriteLine("This drink serial number is not valid");
             return false;
         }
+
+        public Drink IdentifyDrink(string serialNumber)
+        {
+
+            foreach (var VARIABLE in _drinkList)
+            {
+                if (serialNumber == VARIABLE.SerialNumber)
+                {
+                    return VARIABLE;
+                }
+            }
+
+            return null;
+        }
         
     }
 }
