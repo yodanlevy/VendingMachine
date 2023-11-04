@@ -59,14 +59,15 @@ namespace VendingMachine
 
         public bool SerialNumberValidator(string serialNumber)
         {
-            foreach (var VARIABLE in _drinkList)
+            foreach (var variable in _drinkList)
             {
-                if (VARIABLE.SerialNumber == serialNumber)
+                if (variable.SerialNumber == serialNumber)
                 {
                     return true;
                 }
             }
-            
+
+            Console.WriteLine("This drink serial number is not valid");
             return false;
         }
         
