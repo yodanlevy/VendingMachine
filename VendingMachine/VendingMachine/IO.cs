@@ -29,6 +29,18 @@ namespace VendingMachine
             total += double.Parse(coins);
             return total;
         }
+
+        public Drink ChooseDrink(string userDrinkChoice)
+        {
+            while (SerialNumberValidator(userDrinkChoice) == false)
+            {
+                userDrinkChoice = Console.ReadLine();
+                ChooseDrink(userDrinkChoice);
+            }
+
+            return IdentifyDrink(userDrinkChoice);
+        }
+
         public bool SerialNumberValidator(string serialNumber)
         {
             foreach (var VARIABLE in _drinkList)
