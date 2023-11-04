@@ -41,6 +41,22 @@ namespace VendingMachine
             return IdentifyDrink(userDrinkChoice);
         }
 
+        public void CheckTotal(double total, Drink usersDrinkChoice)
+        {
+            if (total >= usersDrinkChoice.Price)
+            {
+                total -= usersDrinkChoice.Price;
+                Console.WriteLine($"Enjoy your {usersDrinkChoice.DrinkName}!");
+                Console.WriteLine("Change: " + total);
+            }
+            else
+            {
+                Console.WriteLine("You're missing " + (total - usersDrinkChoice.Price) + " NIS");
+                var userCoins = Console.ReadLine();
+                InsertCoins(userCoins, total);
+            }
+        }
+
         public bool SerialNumberValidator(string serialNumber)
         {
             foreach (var VARIABLE in _drinkList)
