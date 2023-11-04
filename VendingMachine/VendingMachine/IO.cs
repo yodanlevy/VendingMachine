@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 
 namespace VendingMachine
@@ -17,6 +17,18 @@ namespace VendingMachine
             }
         }
 
+        public double InsertCoins(string coins, double total)
+        {
+            if (Validator.IsValid(coins) == false)
+            {
+                Console.WriteLine("Invalid coin");
+                var userCoins = Console.ReadLine();
+                InsertCoins(userCoins, total);
+            }
+
+            total += double.Parse(coins);
+            return total;
+        }
         public bool SerialNumberValidator(string serialNumber)
         {
             foreach (var VARIABLE in _drinkList)
