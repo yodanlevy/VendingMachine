@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 
 namespace VendingMachine
@@ -19,23 +19,36 @@ namespace VendingMachine
 
         public double InsertCoins(string coins, double total)
         {
-            if (Validator.IsValid(coins) == false)
+            while (!string.IsNullOrWhiteSpace(coins))
             {
-                Console.WriteLine("Invalid coin");
-                var userCoins = Console.ReadLine();
-                InsertCoins(userCoins, total);
+                if (Validator.IsValid(coins))
+                {
+                    total += double.Parse(coins);
+                    coins = Console.ReadLine();
+                }
+
+                else
+                {
+                    Console.WriteLine("Invalid coin");
+                    coins = Console.ReadLine();
+                    InsertCoins(coins, total);
+                }
+                
             }
 
-            total += double.Parse(coins);
+            Console.WriteLine("Total: " + total);
             return total;
         }
 
-        public Drink ChooseDrink(string userDrinkChoice)
+        public Drink ChooseDrink()
         {
+            Console.WriteLine("Choose a drink");
+            string userDrinkChoice = Console.ReadLine();
+            
             while (SerialNumberValidator(userDrinkChoice) == false)
             {
-                userDrinkChoice = Console.ReadLine();
-                ChooseDrink(userDrinkChoice);
+                Console.WriteLine("This drink serial number is not valid");
+                ChooseDrink();
             }
 
             return IdentifyDrink(userDrinkChoice);
@@ -51,7 +64,7 @@ namespace VendingMachine
             }
             else
             {
-                Console.WriteLine("You're missing " + (total - usersDrinkChoice.Price) + " NIS");
+                Console.WriteLine("You're missing " + (usersDrinkChoice.Price - total) + " NIS");
                 var userCoins = Console.ReadLine();
                 InsertCoins(userCoins, total);
             }
