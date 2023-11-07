@@ -31,9 +31,7 @@ namespace VendingMachine
                 {
                     Console.WriteLine("Invalid coin");
                     coins = Console.ReadLine();
-                    InsertCoins(coins, total);
                 }
-                
             }
 
             Console.WriteLine("Total: " + total);
