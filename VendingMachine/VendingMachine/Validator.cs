@@ -17,6 +17,16 @@ namespace VendingMachine
             return false;
         }
 
+        public static bool IsPaymentMethodValid(string userPaymentMethod)
+        {
+            if (int.TryParse(userPaymentMethod, out int number))
+            {
+                return true;
+            }
+
+            return false;
+        }
+
 
     }
 }
