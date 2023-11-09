@@ -7,6 +7,7 @@ namespace VendingMachine
     {
         public static DataInitializer dI = new DataInitializer();
         public List<Drink> _drinkList = dI.InitializeDrink();
+        public List<CreditCard> ValidCards = dI.InitializeCreditCard();
 
         public void PrintDrinks()
         {
