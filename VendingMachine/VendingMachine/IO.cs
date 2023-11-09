@@ -18,6 +18,28 @@ namespace VendingMachine
             }
         }
 
+        public int ChoosePaymentMethod()
+        {
+            Console.WriteLine("For payment in cash please press 1 \n" +
+                              "For payment with credit card please press 2");
+
+            int paymentMethod = 0;
+            string userPaymentMethod = Console.ReadLine();
+
+            while (!string.IsNullOrWhiteSpace(userPaymentMethod))
+            {
+                if (Validator.IsPaymentMethodValid(userPaymentMethod))
+                {
+                    paymentMethod = int.Parse(userPaymentMethod);
+                }
+
+                Console.WriteLine("Payment method is not valid \n Please try again");
+                userPaymentMethod = Console.ReadLine();
+            }
+
+            return paymentMethod;
+        }
+
         public double InsertCoins(string coins, double total)
         {
             while (!string.IsNullOrWhiteSpace(coins))
