@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Linq;
 
 namespace VendingMachine
@@ -27,6 +27,17 @@ namespace VendingMachine
             return false;
         }
 
+        public static bool IsCreditCardValid(string creditCardNumber, List<CreditCard> validCards)
+        {
+            foreach (var VARIABLE in validCards)
+            {
+                if (VARIABLE.Number == creditCardNumber)
+                {
+                    return true;    
+                }
+            }
 
+            return false;
+        }
     }
 }
