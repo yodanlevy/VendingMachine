@@ -2,9 +2,9 @@
 {
     public class CreditCard
     {
-        public int Number;
+        public string Number;
 
-        public CreditCard(int number)
+        public CreditCard(string number)
         {
             this.Number = number;
         }
