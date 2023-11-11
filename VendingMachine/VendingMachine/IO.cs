@@ -31,10 +31,13 @@ namespace VendingMachine
                 if (Validator.IsPaymentMethodValid(userPaymentMethod))
                 {
                     paymentMethod = int.Parse(userPaymentMethod);
+                    return paymentMethod;
                 }
 
-                Console.WriteLine("Payment method is not valid \n Please try again");
+                Console.WriteLine("Payment method is not valid \n" +
+                                  "Please try again");
                 userPaymentMethod = Console.ReadLine();
+
             }
 
             return paymentMethod;
