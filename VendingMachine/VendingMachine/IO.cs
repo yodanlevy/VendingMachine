@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 
 namespace VendingMachine
@@ -38,6 +38,26 @@ namespace VendingMachine
             }
 
             return paymentMethod;
+        }
+
+        public void PayWithCreditCard(Drink userDrinkChoice)
+        {
+            Console.WriteLine("Please enter your credit card number:");
+            string userCreditCard = Console.ReadLine();
+            while (!string.IsNullOrWhiteSpace(userCreditCard))
+            {
+                if (!Validator.IsCreditCardValid(userCreditCard, ValidCards))
+                {
+                    Console.WriteLine("\nYour credit card number is not valid.\n" +
+                                      "Please try again!");
+                    userCreditCard = Console.ReadLine();
+                }
+                else
+                {
+                    Console.WriteLine($"Enjoy your drink! {userDrinkChoice.DrinkName}");
+                    break;
+                }
+            }
         }
 
         public double InsertCoins(string coins, double total)
