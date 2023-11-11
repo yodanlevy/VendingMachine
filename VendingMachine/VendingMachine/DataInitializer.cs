@@ -1,4 +1,4 @@
-﻿using System.Collections.Generic;
+using System.Collections.Generic;
 using System.Runtime.InteropServices;
 
 namespace VendingMachine
@@ -29,9 +29,9 @@ namespace VendingMachine
 
         public List<CreditCard> InitializeCreditCard()
         {
-            CreditCard creditCard1 = new CreditCard(1234);
-            CreditCard creditCard2 = new CreditCard(12345);
-            CreditCard creditCard3 = new CreditCard(123456);
+            CreditCard creditCard1 = new CreditCard("1234");
+            CreditCard creditCard2 = new CreditCard("12345");
+            CreditCard creditCard3 = new CreditCard("123456");
 
             List<CreditCard> validCreditCards = new List<CreditCard>();
             validCreditCards.Add(creditCard1);
