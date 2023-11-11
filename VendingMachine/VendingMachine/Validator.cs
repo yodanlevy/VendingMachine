@@ -1,4 +1,6 @@
-using System;
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel.Design;
 using System.Linq;
 
 namespace VendingMachine
@@ -19,7 +21,7 @@ namespace VendingMachine
 
         public static bool IsPaymentMethodValid(string userPaymentMethod)
         {
-            if (int.TryParse(userPaymentMethod, out int number))
+            if (userPaymentMethod == "1" || userPaymentMethod == "2")
             {
                 return true;
             }
