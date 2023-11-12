@@ -12,41 +12,25 @@ namespace VendingMachine
         public void Start()
         {
             io.PrintDrinks();
-           
-            Console.WriteLine("Insert coins");
-            var userCoins = Console.ReadLine();
             
-            Total = io.InsertCoins(userCoins, Total);
-            
-            Drink userDrinkChoice = io.ChooseDrink();
+            int paymentMethod = io.ChoosePaymentMethod();
 
-            io.CheckTotal(Total, userDrinkChoice);
-
-
-
-
-
-
-
-
-
-
-
-            /**while (!string.IsNullOrWhiteSpace(input))
+            if (paymentMethod == 1)
             {
-                if (Validator.IsValid(input))
-                {
-                    total += double.Parse(input);
-                    input = Console.ReadLine();
-                }
-                else
-                {
-                    Console.WriteLine("Coin is not valid");
-                    input = Console.ReadLine();
-                }
+                Console.WriteLine("Insert coins");
+                string userCoins = Console.ReadLine();
 
-            }*/
+                Total = io.InsertCoins(userCoins, Total);
 
+                Drink userDrinkChoice = io.ChooseDrink();
+
+                io.CheckTotal(Total, userDrinkChoice);
+            }
+            else
+            {
+                Drink userDrinkChoice = io.ChooseDrink();
+                io.PayWithCreditCard(userDrinkChoice);
+            }
         }
     }
 }

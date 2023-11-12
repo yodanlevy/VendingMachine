@@ -6,10 +6,10 @@
         public string SerialNumber;
         public double Price;
 
-        public Drink(string drinkName, string sreialNumber, double price)
+        public Drink(string drinkName, string serialNumber, double price)
         {
             this.DrinkName = drinkName;
-            this.SerialNumber = sreialNumber;
+            this.SerialNumber = serialNumber;
             this.Price = price;
         }
 
