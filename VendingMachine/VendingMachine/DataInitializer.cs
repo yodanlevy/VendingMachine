@@ -15,14 +15,16 @@ namespace VendingMachine
             Drink grapeJuice = new Drink("Grape Juice",6);
             Drink water = new Drink("Water", 4);
 
-            Dictionary<string, Drink> drinkMenu = new Dictionary<string, Drink>();
-            drinkMenu.Add("A1", cocaCola);
-            drinkMenu.Add("A2", cocaColaZero);
-            drinkMenu.Add("A3", sprite);
-            drinkMenu.Add("B1", spriteZero);
-            drinkMenu.Add("B2", orangeJuice);
-            drinkMenu.Add("B3", grapeJuice);
-            drinkMenu.Add("C1", water);
+            Dictionary<string, Drink> drinkMenu = new Dictionary<string, Drink>
+            {
+                {"A1", cocaCola},
+                {"A2", cocaColaZero},
+                {"A3", sprite},
+                {"B1", spriteZero},
+                {"B2", orangeJuice},
+                {"B3", grapeJuice},
+                {"C1", water}
+            };
 
             return drinkMenu;
         }
