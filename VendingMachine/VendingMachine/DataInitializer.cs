@@ -7,13 +7,13 @@ namespace VendingMachine
     {
         public List<Drink> InitializeDrink()
         {
-            Drink CocaCola= new Drink("Coca-Cola", "A1", 5);
-            Drink CocaColaZero = new Drink("Coca-Cola Zero", "A2", 5);
-            Drink Sprite = new Drink("Sprite", "A3", 5);
-            Drink SpriteZero = new Drink("Sprite Zero", "A4", 5);
-            Drink OrangeJuice = new Drink("Orange Juice", "B1", 6);
-            Drink GrapeJuice = new Drink("Grape Juice", "B2", 6);
-            Drink Water = new Drink("Water", "B3", 4);
+            Drink CocaCola= new Drink("Coca-Cola", 5);
+            Drink CocaColaZero = new Drink("Coca-Cola Zero", 5);
+            Drink Sprite = new Drink("Sprite", 5);
+            Drink SpriteZero = new Drink("Sprite Zero",5);
+            Drink OrangeJuice = new Drink("Orange Juice",6);
+            Drink GrapeJuice = new Drink("Grape Juice",6);
+            Drink Water = new Drink("Water", 4);
 
             List<Drink> drinkMenu = new List<Drink>();
             drinkMenu.Add(CocaCola);
