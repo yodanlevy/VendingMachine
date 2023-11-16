@@ -1,4 +1,4 @@
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Runtime.InteropServices;
 
 namespace VendingMachine
@@ -7,13 +7,13 @@ namespace VendingMachine
     {
         public Dictionary<string, Drink> InitializeDrink()
         {
-            Drink CocaCola= new Drink("Coca-Cola", 5);
-            Drink CocaColaZero = new Drink("Coca-Cola Zero", 5);
-            Drink Sprite = new Drink("Sprite", 5);
-            Drink SpriteZero = new Drink("Sprite Zero",5);
-            Drink OrangeJuice = new Drink("Orange Juice",6);
-            Drink GrapeJuice = new Drink("Grape Juice",6);
-            Drink Water = new Drink("Water", 4);
+            Drink cocaCola= new Drink("Coca-Cola", 5);
+            Drink cocaColaZero = new Drink("Coca-Cola Zero", 5);
+            Drink sprite = new Drink("Sprite", 5);
+            Drink spriteZero = new Drink("Sprite Zero",5);
+            Drink orangeJuice = new Drink("Orange Juice",6);
+            Drink grapeJuice = new Drink("Grape Juice",6);
+            Drink water = new Drink("Water", 4);
 
             Dictionary<string, Drink> drinkMenu = new Dictionary<string, Drink>();
             drinkMenu.Add("A1", cocaCola);
