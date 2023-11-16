@@ -10,7 +10,5 @@
             this.DrinkName = drinkName;
             this.Price = price;
         }
-
-
     }
 }
