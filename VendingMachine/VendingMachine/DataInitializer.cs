@@ -1,11 +1,11 @@
-﻿using System.Collections.Generic;
+using System.Collections.Generic;
 using System.Runtime.InteropServices;
 
 namespace VendingMachine
 {
     public class DataInitializer
     {
-        public List<Drink> InitializeDrink()
+        public Dictionary<string, Drink> InitializeDrink()
         {
             Drink CocaCola= new Drink("Coca-Cola", 5);
             Drink CocaColaZero = new Drink("Coca-Cola Zero", 5);
@@ -15,14 +15,14 @@ namespace VendingMachine
             Drink GrapeJuice = new Drink("Grape Juice",6);
             Drink Water = new Drink("Water", 4);
 
-            List<Drink> drinkMenu = new List<Drink>();
-            drinkMenu.Add(CocaCola);
-            drinkMenu.Add(CocaColaZero);
-            drinkMenu.Add(Sprite);
-            drinkMenu.Add(SpriteZero);
-            drinkMenu.Add(OrangeJuice);
-            drinkMenu.Add(GrapeJuice);
-            drinkMenu.Add(Water);
+            Dictionary<string, Drink> drinkMenu = new Dictionary<string, Drink>();
+            drinkMenu.Add("A1", cocaCola);
+            drinkMenu.Add("A2", cocaColaZero);
+            drinkMenu.Add("A3", sprite);
+            drinkMenu.Add("B1", spriteZero);
+            drinkMenu.Add("B2", orangeJuice);
+            drinkMenu.Add("B3", grapeJuice);
+            drinkMenu.Add("C1", water);
 
             return drinkMenu;
         }
