@@ -118,7 +118,7 @@ namespace VendingMachine
         {
             foreach (var variable in Drinks)
             {
-                if (variable.SerialNumber == serialNumber)
+                if (variable.Key == serialNumber)
                 {
                     return true;
                 }
