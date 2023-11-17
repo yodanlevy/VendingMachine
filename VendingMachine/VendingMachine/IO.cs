@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 
 namespace VendingMachine
@@ -6,13 +6,13 @@ namespace VendingMachine
     public class IO
     {
         public static DataInitializer dI = new DataInitializer();
-        public List<Drink> _drinkList = dI.InitializeDrink();
+        public Dictionary<string, Drink> Drinks = dI.InitializeDrink();
         public List<CreditCard> ValidCards = dI.InitializeCreditCard();
 
         public void PrintDrinks()
         {
             Console.WriteLine("Please choose a drink:");
-            foreach (var VARIABLE in _drinkList)
+            foreach (var VARIABLE in Drinks)
             {
                 Console.WriteLine(VARIABLE.SerialNumber + ". " + VARIABLE.DrinkName + " = " + VARIABLE.Price + " NIS" + "\n");
             }
@@ -116,7 +116,7 @@ namespace VendingMachine
 
         public bool SerialNumberValidator(string serialNumber)
         {
-            foreach (var variable in _drinkList)
+            foreach (var keyValuePair in Drinks)
             {
                 if (variable.SerialNumber == serialNumber)
                 {
@@ -130,7 +130,7 @@ namespace VendingMachine
         public Drink IdentifyDrink(string serialNumber)
         {
 
-            foreach (var VARIABLE in _drinkList)
+            foreach (var VARIABLE in DrinkList)
             {
                 if (serialNumber == VARIABLE.SerialNumber)
                 {
