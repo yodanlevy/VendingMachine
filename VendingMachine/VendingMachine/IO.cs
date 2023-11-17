@@ -130,11 +130,11 @@ namespace VendingMachine
         public Drink IdentifyDrink(string serialNumber)
         {
 
-            foreach (var VARIABLE in Drinks)
+            foreach (var variable in Drinks)
             {
-                if (serialNumber == VARIABLE.Key)
+                if (serialNumber == variable.Key)
                 {
-                    return VARIABLE.Value;
+                    return variable.Value;
                 }
             }
 
