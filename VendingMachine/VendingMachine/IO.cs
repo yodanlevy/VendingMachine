@@ -140,6 +140,5 @@ namespace VendingMachine
 
             return null;
         }
-        
     }
 }
