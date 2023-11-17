@@ -116,15 +116,7 @@ namespace VendingMachine
 
         public bool ValidateSerialNumber(string serialNumber)
         {
-            foreach (var variable in Drinks)
-            {
-                if (variable.Key == serialNumber)
-                {
-                    return true;
-                }
-            }
-
-            return false;
+            return Drinks.ContainsKey(serialNumber);
         }
 
         public Drink IdentifyDrink(string serialNumber)
