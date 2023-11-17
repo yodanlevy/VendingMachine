@@ -45,7 +45,7 @@ namespace VendingMachine
 
         public void PayWithCreditCard(Drink userDrinkChoice)
         {
-            Console.WriteLine("Please enter your credit card number:");
+            Console.WriteLine("\nPlease enter your credit card number:");
             string userCreditCard = Console.ReadLine();
             while (!string.IsNullOrWhiteSpace(userCreditCard))
             {
@@ -57,7 +57,7 @@ namespace VendingMachine
                 }
                 else
                 {
-                    Console.WriteLine($"Enjoy your drink! {userDrinkChoice.DrinkName}");
+                    Console.WriteLine($"\nEnjoy your drink! {userDrinkChoice.DrinkName}");
                     break;
                 }
             }
@@ -75,23 +75,23 @@ namespace VendingMachine
 
                 else
                 {
-                    Console.WriteLine("Invalid coin");
+                    Console.WriteLine("\nInvalid coin");
                     coins = Console.ReadLine();
                 }
             }
 
-            Console.WriteLine("Total: " + total);
+            Console.WriteLine("\nTotal: " + total);
             return total;
         }
 
         public Drink ChooseDrink()
         {
-            Console.WriteLine("Choose a drink");
+            Console.WriteLine("\nChoose a drink");
             string userDrinkChoice = Console.ReadLine();
             
             while (ValidateSerialNumber(userDrinkChoice) == false)
             {
-                Console.WriteLine("This drink serial number is not valid");
+                Console.WriteLine("\nThis drink serial number is not valid");
                 userDrinkChoice = Console.ReadLine();
             }
 
@@ -103,12 +103,12 @@ namespace VendingMachine
             if (total >= usersDrinkChoice.Price)
             {
                 total -= usersDrinkChoice.Price;
-                Console.WriteLine($"Enjoy your {usersDrinkChoice.DrinkName}!");
+                Console.WriteLine($"\nEnjoy your {usersDrinkChoice.DrinkName}!");
                 Console.WriteLine("Change: " + total);
             }
             else
             {
-                Console.WriteLine("You're missing " + (usersDrinkChoice.Price - total) + " NIS");
+                Console.WriteLine("\nYou're missing " + (usersDrinkChoice.Price - total) + " NIS");
                 var userCoins = Console.ReadLine();
                 InsertCoins(userCoins, total);
             }
