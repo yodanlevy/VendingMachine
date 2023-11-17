@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 
 namespace VendingMachine
@@ -130,11 +130,11 @@ namespace VendingMachine
         public Drink IdentifyDrink(string serialNumber)
         {
 
-            foreach (var VARIABLE in DrinkList)
+            foreach (var VARIABLE in Drinks)
             {
-                if (serialNumber == VARIABLE.SerialNumber)
+                if (serialNumber == VARIABLE.Key)
                 {
-                    return VARIABLE;
+                    return VARIABLE.Value;
                 }
             }
 
