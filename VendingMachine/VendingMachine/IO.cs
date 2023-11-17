@@ -12,7 +12,7 @@ namespace VendingMachine
         public void PrintDrinks()
         {
             Console.WriteLine("Please choose a drink:");
-            foreach (var VARIABLE in Drinks)
+            foreach (var variable in Drinks)
             {
                 Console.WriteLine(VARIABLE.Key + ". " + VARIABLE.Value.DrinkName + " = " + VARIABLE.Value.Price + " NIS" + "\n");
             }
@@ -116,7 +116,7 @@ namespace VendingMachine
 
         public bool SerialNumberValidator(string serialNumber)
         {
-            foreach (var keyValuePair in Drinks)
+            foreach (var variable in Drinks)
             {
                 if (variable.SerialNumber == serialNumber)
                 {
