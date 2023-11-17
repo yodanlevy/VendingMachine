@@ -89,7 +89,7 @@ namespace VendingMachine
             Console.WriteLine("Choose a drink");
             string userDrinkChoice = Console.ReadLine();
             
-            while (SerialNumberValidator(userDrinkChoice) == false)
+            while (ValidateSerialNumber(userDrinkChoice) == false)
             {
                 Console.WriteLine("This drink serial number is not valid");
                 userDrinkChoice = Console.ReadLine();
@@ -114,7 +114,7 @@ namespace VendingMachine
             }
         }
 
-        public bool SerialNumberValidator(string serialNumber)
+        public bool ValidateSerialNumber(string serialNumber)
         {
             foreach (var variable in Drinks)
             {
