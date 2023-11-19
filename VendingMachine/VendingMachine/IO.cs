@@ -1,13 +1,13 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 
 namespace VendingMachine
 {
     public class IO
     {
-        public static DataInitializer dI = new DataInitializer();
-        public Dictionary<string, Drink> Drinks = dI.InitializeDrink();
-        public List<CreditCard> ValidCards = dI.InitializeCreditCard();
+        public static DataInitializer DataInitializer = new DataInitializer();
+        public Dictionary<string, Drink> Drinks = DataInitializer.InitializeDrink();
+        public List<CreditCard> ValidCards = DataInitializer.InitializeCreditCards();
 
         public void PrintDrinks()
         {
