@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Threading;
@@ -17,7 +17,7 @@ namespace VendingMachine
 
             if (paymentMethod == 1)
             {
-                Console.WriteLine("Insert coins");
+                Console.WriteLine("\nInsert coins");
                 string userCoins = Console.ReadLine();
 
                 Total = io.InsertCoins(userCoins, Total);
