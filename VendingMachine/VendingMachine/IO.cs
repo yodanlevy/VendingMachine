@@ -25,14 +25,11 @@ namespace VendingMachine
 
             string userPaymentMethod = Console.ReadLine();
 
-            while (!string.IsNullOrWhiteSpace(userPaymentMethod))
-            {
-                if (!Validator.IsPaymentMethodValid(userPaymentMethod))
-                {
-                    Console.WriteLine("Payment method is not valid \n" +
-                                      "Please try again");
-                    userPaymentMethod = Console.ReadLine();
-                }
+            while (!Validator.IsPaymentMethodValid(userPaymentMethod))
+            {    
+                Console.WriteLine("Payment method is not valid \n" +
+                                    "Please try again");
+                userPaymentMethod = Console.ReadLine();
             }
 
             return userPaymentMethod;
