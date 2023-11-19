@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Threading;
@@ -24,7 +24,11 @@ namespace VendingMachine
 
                 Drink userDrinkChoice = io.ChooseDrink();
 
-                io.CheckTotal(Total, userDrinkChoice);
+                while (!io.CheckTotal(Total, userDrinkChoice))
+                {
+                    userCoins = Console.ReadLine();
+                    Total = io.InsertCoins(userCoins, Total);
+                }
             }
             else
             {
