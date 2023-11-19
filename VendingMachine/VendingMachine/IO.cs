@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 
 namespace VendingMachine
@@ -98,7 +98,7 @@ namespace VendingMachine
             return IdentifyDrink(userDrinkChoice);
         }
 
-        public void CheckTotal(double total, Drink usersDrinkChoice)
+        public bool CheckTotal(double total, Drink usersDrinkChoice)
         {
             if (total >= usersDrinkChoice.Price)
             {
