@@ -23,24 +23,19 @@ namespace VendingMachine
             Console.WriteLine("For payment in cash please press 1 \n" +
                               "For payment with credit card please press 2");
 
-            int paymentMethod = 0;
             string userPaymentMethod = Console.ReadLine();
 
             while (!string.IsNullOrWhiteSpace(userPaymentMethod))
             {
-                if (Validator.IsPaymentMethodValid(userPaymentMethod))
+                if (!Validator.IsPaymentMethodValid(userPaymentMethod))
                 {
-                    paymentMethod = int.Parse(userPaymentMethod);
-                    return paymentMethod;
-                }
-
-                Console.WriteLine("Payment method is not valid \n" +
-                                  "Please try again");
-                userPaymentMethod = Console.ReadLine();
+                    Console.WriteLine("Payment method is not valid \n" +
+                                      "Please try again");
+                    userPaymentMethod = Console.ReadLine();
                 }
             }
 
-            return paymentMethod;
+            return userPaymentMethod;
         }
 
         public void PayWithCreditCard(Drink userDrinkChoice)
