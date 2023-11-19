@@ -13,9 +13,9 @@ namespace VendingMachine
         {
             io.PrintDrinks();
             
-            int paymentMethod = io.ChoosePaymentMethod();
+            string paymentMethod = io.ChoosePaymentMethod();
 
-            if (paymentMethod == 1)
+            if (paymentMethod == "1")
             {
                 Console.WriteLine("\nInsert coins");
                 string userCoins = Console.ReadLine();
