@@ -105,12 +105,12 @@ namespace VendingMachine
                 total -= usersDrinkChoice.Price;
                 Console.WriteLine($"\nEnjoy your {usersDrinkChoice.DrinkName}!");
                 Console.WriteLine("Change: " + total);
+                return true;
             }
             else
             {
                 Console.WriteLine("\nYou're missing " + (usersDrinkChoice.Price - total) + " NIS");
-                var userCoins = Console.ReadLine();
-                InsertCoins(userCoins, total);
+                return false;
             }
         }
 
