@@ -29,7 +29,7 @@ namespace VendingMachine
             return drinkMenu;
         }
 
-        public List<CreditCard> InitializeCreditCard()
+        public List<CreditCard> InitializeCreditCards()
         {
             CreditCard creditCard1 = new CreditCard("1234");
             CreditCard creditCard2 = new CreditCard("12345");
