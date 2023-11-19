@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 
 namespace VendingMachine
@@ -18,7 +18,7 @@ namespace VendingMachine
             }
         }
 
-        public int ChoosePaymentMethod()
+        public string ChoosePaymentMethod()
         {
             Console.WriteLine("For payment in cash please press 1 \n" +
                               "For payment with credit card please press 2");
@@ -37,7 +37,7 @@ namespace VendingMachine
                 Console.WriteLine("Payment method is not valid \n" +
                                   "Please try again");
                 userPaymentMethod = Console.ReadLine();
-
+                }
             }
 
             return paymentMethod;
