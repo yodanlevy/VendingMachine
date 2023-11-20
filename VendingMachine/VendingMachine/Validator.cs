@@ -16,12 +16,7 @@ namespace VendingMachine
 
         public static bool IsPaymentMethodValid(string userPaymentMethod)
         {
-            if (userPaymentMethod == "1" || userPaymentMethod == "2")
-            {
-                return true;
-            }
-
-            return false;
+            return (userPaymentMethod == "1" || userPaymentMethod == "2");
         }
 
         public static bool IsCreditCardValid(string creditCardNumber, List<CreditCard> validCards)
