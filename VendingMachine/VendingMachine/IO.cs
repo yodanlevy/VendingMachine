@@ -22,7 +22,6 @@ namespace VendingMachine
         {
             Console.WriteLine("For payment in cash please press 1 \n" +
                               "For payment with credit card please press 2");
-
             string userPaymentMethod = Console.ReadLine();
 
             while (!Validator.IsPaymentMethodValid(userPaymentMethod))

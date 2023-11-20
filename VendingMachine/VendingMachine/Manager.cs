@@ -20,14 +20,14 @@ namespace VendingMachine
                 Console.WriteLine("\nInsert coins");
                 string userCoins = Console.ReadLine();
 
-                Total = io.InsertCoins(userCoins, Total);
+                Total = io.PayInCash(userCoins, Total);
 
                 Drink userDrinkChoice = io.ChooseDrink();
 
                 while (!io.CheckTotal(Total, userDrinkChoice))
                 {
                     userCoins = Console.ReadLine();
-                    Total = io.InsertCoins(userCoins, Total);
+                    Total = io.PayInCash(userCoins, Total);
                 }
             }
             else
