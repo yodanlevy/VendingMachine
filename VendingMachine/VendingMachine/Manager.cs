@@ -12,7 +12,6 @@ namespace VendingMachine
         public void Start()
         {
             io.PrintDrinks();
-            
             string paymentMethod = io.ChoosePaymentMethod();
 
             if (paymentMethod == "1")
