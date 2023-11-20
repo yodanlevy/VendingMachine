@@ -11,12 +11,7 @@ namespace VendingMachine
 
         public static bool IsCoinValid(String str)
         {
-            if (double.TryParse(str, out var number))
-            {
-                return _coins.Contains(number);
-            }
-
-            return false;
+            return (double.TryParse(str, out var number));
         }
 
         public static bool IsPaymentMethodValid(string userPaymentMethod)

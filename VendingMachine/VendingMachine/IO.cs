@@ -54,11 +54,11 @@ namespace VendingMachine
             }
         }
 
-        public double InsertCoins(string coins, double total)
+        public double PayInCash(string coins, double total)
         {
             while (!string.IsNullOrWhiteSpace(coins))
             {
-                if (Validator.IsValid(coins))
+                if (Validator.IsCoinValid(coins))
                 {
                     total += double.Parse(coins);
                     coins = Console.ReadLine();
