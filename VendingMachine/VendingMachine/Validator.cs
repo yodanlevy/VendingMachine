@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.Design;
 using System.Linq;
 
@@ -21,15 +22,7 @@ namespace VendingMachine
 
         public static bool IsCreditCardValid(string creditCardNumber, List<CreditCard> validCards)
         {
-            foreach (var VARIABLE in validCards)
-            {
-                if (VARIABLE.Number == creditCardNumber)
-                {
-                    return true;    
-                }
-            }
-
-            return false;
+            return validCards.Any(card => card.Number == creditCardNumber);
         }
     }
 }
