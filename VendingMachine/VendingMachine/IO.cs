@@ -6,7 +6,7 @@ namespace VendingMachine
     public class IO
     {
         public static DataInitializer DataInitializer = new DataInitializer();
-        public Dictionary<string, Drink> Drinks = DataInitializer.InitializeDrink();
+        public Dictionary<string, Drink> Drinks = DataInitializer.InitializeDrinks();
         public List<CreditCard> ValidCards = DataInitializer.InitializeCreditCards();
 
         public void PrintDrinks()
@@ -89,18 +89,18 @@ namespace VendingMachine
             return IdentifyDrink(userDrinkChoice);
         }
 
-        public bool CheckTotal(double total, Drink usersDrinkChoice)
+        public bool CheckIfCanBuy(double payment, Drink drink)
         {
-            if (total >= usersDrinkChoice.Price)
+            if (payment >= drink.Price)
             {
-                total -= usersDrinkChoice.Price;
-                Console.WriteLine($"\nEnjoy your {usersDrinkChoice.DrinkName}!");
-                Console.WriteLine("Change: " + total);
+                payment -= drink.Price;
+                Console.WriteLine($"\nEnjoy your {drink.DrinkName}!");
+                Console.WriteLine("Change: " + payment);
                 return true;
             }
             else
             {
-                Console.WriteLine("\nYou're missing " + (usersDrinkChoice.Price - total) + " NIS");
+                Console.WriteLine("\nYou're missing " + (drink.Price - payment) + " NIS");
                 return false;
             }
         }
