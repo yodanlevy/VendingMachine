@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.Design;
 using System.Linq;
+using Microsoft.VisualBasic;
 
 namespace VendingMachine
 {
@@ -10,9 +11,9 @@ namespace VendingMachine
     {
         static double[] _coins = { 0.1, 0.5, 1, 2, 5, 10 };
 
-        public static bool IsCoinValid(String str)
+        public static bool IsCoinValid(String coinInput)
         {
-            return (double.TryParse(str, out var number));
+            return (double.TryParse(coinInput, out double number) && _coins.Contains(number));
         }
 
         public static bool IsPaymentMethodValid(string userPaymentMethod)
