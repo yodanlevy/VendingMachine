@@ -5,7 +5,7 @@ namespace VendingMachine
 {
     public class DataInitializer
     {
-        public Dictionary<string, Drink> InitializeDrink()
+        public Dictionary<string, Drink> InitializeDrinks()
         {
             Drink cocaCola= new Drink("Coca-Cola", 5);
             Drink cocaColaZero = new Drink("Coca-Cola Zero", 5);
