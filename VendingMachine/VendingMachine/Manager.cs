@@ -8,7 +8,8 @@ namespace VendingMachine
     class Manager
     {
         public IO io = new IO();
-        public double Total = 0.0;
+        private Manager _manager = new Manager();
+
         public void Start()
         {
             io.PrintDrinks();
@@ -16,22 +17,28 @@ namespace VendingMachine
 
             if (paymentMethod == "1")
             {
-                Console.WriteLine("\nInsert coins");
-                string userCoins = Console.ReadLine();
-
-                Total = io.PayInCash(userCoins, Total);
-
-                Drink userDrinkChoice = io.ChooseDrink();
-                while (!io.CheckTotal(Total, userDrinkChoice))
-                {
-                    userCoins = Console.ReadLine();
-                    Total = io.PayInCash(userCoins, Total);
-                }
+                _manager.PayInCash();
             }
             else
             {
                 Drink userDrinkChoice = io.ChooseDrink();
                 io.PayWithCreditCard(userDrinkChoice);
+            }
+        }
+
+        private void PayInCash()
+        {
+            double total = 0;
+            Console.WriteLine("\nInsert coins");
+            string userCoins = Console.ReadLine();
+
+            total = io.PayInCash(userCoins, total);
+
+            Drink userDrinkChoice = io.ChooseDrink();
+            while (!io.CheckTotal(total, userDrinkChoice))
+            {
+                userCoins = Console.ReadLine();
+                total = io.PayInCash(userCoins, total);
             }
         }
     }
