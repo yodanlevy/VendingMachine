@@ -33,7 +33,7 @@ namespace VendingMachine
             total = io.PayInCash(userCoins, total);
 
             Drink userDrinkChoice = io.ChooseDrink();
-            while (!io.CheckTotal(total, userDrinkChoice))
+            while (!io.CheckIfCanBuy(total, userDrinkChoice))
             {
                 userCoins = Console.ReadLine();
                 total = io.PayInCash(userCoins, total);
