@@ -12,9 +12,9 @@ namespace VendingMachine
         public void PrintDrinks()
         {
             Console.WriteLine("Please choose a drink:");
-            foreach (var variable in Drinks)
+            foreach (var drink in Drinks)
             {
-                Console.WriteLine($"{variable.Key}. {variable.Value.DrinkName} = {variable.Value.Price} NIS \n");
+                Console.WriteLine($"{drink.Key}. {drink.Value.DrinkName} = {drink.Value.Price} NIS \n");
             }
         }
 
