@@ -78,15 +78,15 @@ namespace VendingMachine
         public Drink ChooseDrink()
         {
             Console.WriteLine("\nChoose a drink");
-            string userDrinkChoice = Console.ReadLine();
+            string userSerialNumberChoice = Console.ReadLine();
             
-            while (ValidateSerialNumber(userDrinkChoice) == false)
+            while (ValidateSerialNumber(userSerialNumberChoice) == false)
             {
                 Console.WriteLine("\nThis drink serial number is not valid");
-                userDrinkChoice = Console.ReadLine();
+                userSerialNumberChoice = Console.ReadLine();
             }
 
-            return IdentifyDrink(userDrinkChoice);
+            return IdentifyDrink(userSerialNumberChoice);
         }
 
         public bool CheckIfCanBuy(double payment, Drink drink)
