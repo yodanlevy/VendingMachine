@@ -112,7 +112,6 @@ namespace VendingMachine
 
         public Drink IdentifyDrink(string serialNumber)
         {
-
             foreach (var variable in Drinks)
             {
                 if (serialNumber == variable.Key)
