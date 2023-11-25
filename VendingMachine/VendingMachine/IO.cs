@@ -5,14 +5,20 @@ namespace VendingMachine
 {
     public class IO
     {
-        public static DataInitializer DataInitializer = new DataInitializer();
-        public Dictionary<string, Drink> Drinks = DataInitializer.InitializeDrinks();
-        public List<CreditCard> ValidCards = DataInitializer.InitializeCreditCards();
-        
+        private Dictionary<string, Drink> _drinks;
+        private readonly List<CreditCard> _validCards;
+
+        public IO()
+        {
+            DataInitializer dataInitializer = new DataInitializer();
+            _drinks = dataInitializer.InitializeDrinks();
+            _validCards = dataInitializer.InitializeCreditCards();
+        }
+
         public void PrintDrinks()
         {
             Console.WriteLine("Please choose a drink:");
-            foreach (var drink in Drinks)
+            foreach (var drink in _drinks)
             {
                 Console.WriteLine($"{drink.Key}. {drink.Value.DrinkName} = {drink.Value.Price} NIS \n");
             }
@@ -40,7 +46,7 @@ namespace VendingMachine
             string userCreditCard = Console.ReadLine();
             while (!string.IsNullOrWhiteSpace(userCreditCard))
             {
-                if (!Validator.IsCreditCardValid(userCreditCard, ValidCards))
+                if (!Validator.IsCreditCardValid(userCreditCard, _validCards))
                 {
                     Console.WriteLine("\nYour credit card number is not valid.\n" +
                                       "Please try again!");
@@ -108,12 +114,12 @@ namespace VendingMachine
 
         public bool ValidateSerialNumber(string serialNumber)
         {
-            return Drinks.ContainsKey(serialNumber);
+            return _drinks.ContainsKey(serialNumber);
         }
 
         public Drink IdentifyDrink(string serialNumber)
         {
-            foreach (var variable in Drinks)
+            foreach (var variable in _drinks)
             {
                 if (serialNumber == variable.Key)
                 {
