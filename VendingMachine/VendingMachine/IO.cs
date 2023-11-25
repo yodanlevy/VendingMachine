@@ -8,7 +8,7 @@ namespace VendingMachine
         public static DataInitializer DataInitializer = new DataInitializer();
         public Dictionary<string, Drink> Drinks = DataInitializer.InitializeDrinks();
         public List<CreditCard> ValidCards = DataInitializer.InitializeCreditCards();
-
+        
         public void PrintDrinks()
         {
             Console.WriteLine("Please choose a drink:");
@@ -54,13 +54,14 @@ namespace VendingMachine
             }
         }
 
-        public double PayInCash(string coins, double total)
+        public double GetCoins(string coins)
         {
+            double totalCoins = 0;
             while (!string.IsNullOrWhiteSpace(coins))
             {
                 if (Validator.IsCoinValid(coins))
                 {
-                    total += double.Parse(coins);
+                    totalCoins += double.Parse(coins);
                     coins = Console.ReadLine();
                 }
 
@@ -71,8 +72,8 @@ namespace VendingMachine
                 }
             }
 
-            Console.WriteLine("\nTotal: " + total);
-            return total;
+            Console.WriteLine("\nTotal: " + totalCoins);
+            return totalCoins;
         }
 
         public Drink ChooseDrink()
